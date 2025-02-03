@@ -1,5 +1,12 @@
-// backend/api/index.js
+const express = require("express");
+const cors = require("cors");
 
-module.exports = (req, res) => {
-  res.status(200).send('Backend 1.0');
-};
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get("/api/test", (req, res) => {
+    res.json({ message: "API funcionando no Vercel!" });
+});
+
+module.exports = app;

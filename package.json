@@ -1,5 +1,5 @@
 {
-  "name": "backend-api",
+  "name": "prototype",
   "private": true,
   "scripts": {
     "install": "npm install --workspaces",
