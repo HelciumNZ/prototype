@@ -7,12 +7,12 @@
     },
     {
       "src": "frontend/package.json",
-      "use": "@vercel/react"
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
-      "src": "/src/(.*)",
+      "src": "/api/(.*)",
       "dest": "/backend/api/$1"
     },
     {
