@@ -1,10 +1,6 @@
 {
   "name": "backend-api",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "scripts": {
     "install": "npm install --workspaces",
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\""
