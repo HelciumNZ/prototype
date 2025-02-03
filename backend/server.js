@@ -13,6 +13,8 @@ const itemRoutes = require(
     "./api/routes/itemRoutes");
 app.use("/items", itemRoutes);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => 
-    console.log(`Servidor rodando na porta ${PORT}`));
+module.exports = app;
+
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => 
+//     console.log(`Servidor rodando na porta ${PORT}`));

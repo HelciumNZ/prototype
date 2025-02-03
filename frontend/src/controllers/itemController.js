@@ -1,8 +1,9 @@
 // src/controllers/itemController.js
 import axios from "axios";
+import API_URL from "../config";
 
 // const API_URL = "http://localhost:8080/items";
-const API_URL = process.env.REACT_APP_API_URL + "/items";
+// const API_URL = process.env.REACT_APP_API_URL + "/items";
 
 class ItemController {
   async fetchItems(setItems) {
