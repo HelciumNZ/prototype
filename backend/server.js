@@ -13,6 +13,10 @@ const itemRoutes = require(
     "./api/routes/itemRoutes");
 app.use("/items", itemRoutes);
 
+app.get("/api/test", (req, res) => {
+    res.json({ message: "API working on Vercel!" });
+});
+
 module.exports = app;
 
 // const PORT = process.env.PORT || 5000;
