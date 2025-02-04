@@ -1,14 +1,14 @@
-const express = require("express");
-const cors = require("cors");
+import express, { json } from "express";
+import cors from "cors";
 require("dotenv").config();
-require("./api/config/db");
+import "./api/config/db";
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+app.use(json());
 
 // Definir todas as rotas dentro de `/api`
-const itemRoutes = require("./api/routes/itemRoutes");
+import itemRoutes from "./api/routes/itemRoutes";
 app.use("/api/items", itemRoutes);
 
 // Teste para verificar se a API está rodando
@@ -16,7 +16,7 @@ app.get("/api/test", (req, res) => {
     res.json({ message: "API funcionando no Vercel!" });
 });
 
-module.exports = app;
+export default app;
 
 
 // const express = require("express");
