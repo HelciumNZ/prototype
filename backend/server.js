@@ -11,6 +11,10 @@ app.use(express.json());
 const itemRoutes = require("./api/routes/itemRoutes");
 app.use("/api/items", itemRoutes);
 
+app.get("/api", (req, res) => {
+    res.json({ message: "API funcionando! Use /api/items para acessar os dados." });
+});
+
 // Configurando o server para o Vercel
 module.exports = app;
 
