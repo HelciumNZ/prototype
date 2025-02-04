@@ -2,13 +2,10 @@
 import axios from "axios";
 import API_URL from "../config";
 
-// const API_URL = "http://localhost:8080/items";
-// const API_URL = process.env.REACT_APP_API_URL + "/items";
-
 class ItemController {
   async fetchItems(setItems) {
     try {
-      const response = await axios.get(API_URL);
+      const response = await axios.get(`${API_URL}/api/items`);
       setItems(response.data);
     } catch (error) {
       console.error("Error fetching items:", error);
@@ -18,9 +15,9 @@ class ItemController {
   async saveItem(item, editingId, fetchItems, setEditingId, resetForm) {
     try {
       if (editingId) {
-        await axios.put(`${API_URL}/${editingId}`, item);
+        await axios.put(`${API_URL}/api/items/${editingId}`, item);
       } else {
-        await axios.post(API_URL, item);
+        await axios.post(`${API_URL}/api/items`, item);
       }
       resetForm();
       setEditingId(null);
@@ -32,7 +29,7 @@ class ItemController {
 
   async deleteItem(id, fetchItems) {
     try {
-      await axios.delete(`${API_URL}/${id}`);
+      await axios.delete(`${API_URL}/api/items/${id}`);
       fetchItems();
     } catch (error) {
       console.error("Error deleting item:", error);
