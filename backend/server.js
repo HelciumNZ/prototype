@@ -17,7 +17,7 @@ app.get("/api", (req, res) => {
     });
 });
 
-app.get("/", (req, res) => {
+app.get("", (req, res) => {
     res.json({ 
         message: "API is working! Use /api/items to access data." 
     });
