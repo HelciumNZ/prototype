@@ -1,11 +1,15 @@
 const express = require("express");
 const cors = require("cors");
+const favicon = require("serve-favicon");
+const path = require("path");
 
 require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // Importando as rotas
 const itemRoutes = require("./api/routes/itemRoutes");
