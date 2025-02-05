@@ -12,6 +12,7 @@ const itemRoutes = require("./api/routes/itemRoutes");
 app.use("/api/items", itemRoutes);
 
 app.get("/api", (req, res) => {
+    console.log('API checking')
     res.json({ 
         message: "API is working! Use /api/items to access data." 
     });
