@@ -19,6 +19,7 @@ app.get("/api", (req, res) => {
 });
 
 app.get("", (req, res) => {
+    console.error("🚨 Algo deu errado no backend!");
     res.json({ 
         message: "API is working! Use /api/items to access data." 
     });
