@@ -10,9 +10,9 @@ function App() {
   const [form, setForm] = useState(new ItemModel());
   const [editingId, setEditingId] = useState(null);
 
-  useEffect(() => {
-    ItemController.fetchItems(setItems);
-  }, []);
+  // useEffect(() => {
+  //   ItemController.fetchItems(setItems);
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ function App() {
   return (
     <div>
       <h1>CRUD with React + Node.js + MongoDB</h1>
-      <ItemForm 
+      {/* <ItemForm 
         form={form} 
         setForm={setForm} 
         editingId={editingId} 
@@ -49,7 +49,7 @@ function App() {
       <ItemList 
         items={items} 
         handleEdit={handleEdit} 
-        handleDelete={handleDelete} />
+        handleDelete={handleDelete} /> */}
     </div>
   );
 }
