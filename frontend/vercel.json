@@ -11,6 +11,15 @@
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "headers": { "Cache-Control": "max-age=31536000, immutable" },
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
