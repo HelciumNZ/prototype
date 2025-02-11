@@ -6,7 +6,12 @@ require("dotenv").config();
 require("./api/config/db");
 
 const app = express();
-app.use(cors());
+// https://prototype-frontend-htyugwfhu-helciumnzs-projects.vercel.app/
+app.use(cors({
+    origin: "*", // Permite requisições de qualquer origem (não recomendado para produção)
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
