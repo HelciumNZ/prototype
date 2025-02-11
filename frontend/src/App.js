@@ -11,7 +11,7 @@ function App() {
   const [editingId, setEditingId] = useState(null);
 
   useEffect(() => {
-    // ItemController.fetchItems(setItems);
+    ItemController.fetchItems(setItems);
   }, []);
 
   const handleSubmit = async (e) => {
